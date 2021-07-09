@@ -62,7 +62,7 @@ mixin AppInit<T extends StatefulWidget> on
       handler: (isNight) {
         setNavigationBarStyle(
           isNight ? nightPrimaryColor : Colors.white,
-          isNight ? Brightness.light : Brightness.light
+          isNight ? Brightness.light : Brightness.dark
         );
       }
     );
@@ -129,6 +129,10 @@ mixin AppInit<T extends StatefulWidget> on
       settingsProvider.theme = otherPref.lastTheme;
     }
 
-    setNavigationBarStyle(settingsProvider.theme == 'night' ? nightPrimaryColor : Colors.white);
+		if (settingsProvider.theme == 'night') {
+			setNavigationBarStyle(nightPrimaryColor, Brightness.light);
+		} else {
+			setNavigationBarStyle(Colors.white, Brightness.dark);
+		}
   }
 }

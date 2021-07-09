@@ -20,7 +20,7 @@ void setStatusBarTextBrightness(Brightness brightness) {
   );
 }
 
-void setNavigationBarStyle(Color backgroundColor, [Brightness iconBrightness]) {
+void setNavigationBarStyle(Color backgroundColor, Brightness iconBrightness) {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       systemNavigationBarColor: backgroundColor,
